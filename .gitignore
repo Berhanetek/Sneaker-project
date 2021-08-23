@@ -1,0 +1,16 @@
+plotlypractice
+*.pyc
+.env
+.DS_Store
+.ipynb_checkpoints
+.virtual_documents
+.vscode
+*.ipynb
+other_csv
+vscode_test.py
+design_dashboard.pdf
+design_dashboard.pptx
+August 17.py.py
+pipeline.py
+ibs_app.py
+__pycache__
