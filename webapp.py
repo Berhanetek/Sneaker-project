@@ -321,7 +321,7 @@ def update_HSV_cosine_distance(value):
     nike_df1 = nike_df.loc[:, 'mean_b':'ent_grey']
     nike_df1 = nike_df1.apply(pd.to_numeric, errors = 'raise')
 
-    nike_df2 = nike_df.loc[:, 'B_hist_0':'R_hist_127']
+    nike_df2 = nike_df.loc[:, 'B_hist_0':'R_hist_31'] #127
     nike_df2 = nike_df2.apply(pd.to_numeric, errors = 'raise')
 
     dff = pd.concat([nike_df1, nike_df2], axis=1, join='inner')
@@ -375,7 +375,7 @@ def update_HSVRGB_cosine_distance(value):
     nike_df1 = nike_df.loc[:, 'mean_b':'ent_grey']
     nike_df1 = nike_df1.apply(pd.to_numeric, errors = 'raise')
 
-    nike_df2 = nike_df.loc[:, 'B_hist_0':'R_hist_127']
+    nike_df2 = nike_df.loc[:, 'B_hist_0':'R_hist_31']#127
     nike_df2 = nike_df2.apply(pd.to_numeric, errors = 'raise')
 
     dff = pd.concat([nike_df1, nike_df2], axis=1, join='inner')
@@ -396,7 +396,7 @@ def update_HSVRGB_cosine_distance(value):
     elif value =='RGBHSL':
         features_to_use = ['mean_b','std_v']
     elif value =='All_color_features':
-        features_to_use = ['mean_b', 'R_hist_127']
+        features_to_use = ['mean_b', 'R_hist_31'] #127
     
     result = dff.groupby(['triannual']).apply(lambda x: pairwise_cosine_distance(x, features_to_use))
 
@@ -456,4 +456,4 @@ def pairwise_average_distance(gr, features_to_use):
 
 
 if __name__=='__main__':
-    app.run_server(debug=True)
+    app.run_server()
