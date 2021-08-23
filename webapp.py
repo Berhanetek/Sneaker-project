@@ -26,7 +26,7 @@ app = dash.Dash(__name__, external_stylesheets = [dbc.themes.LUX], meta_tags=[{'
 server = app.server
 #server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/')
 
-df = pd.read_csv('data/August23_32.csv')
+df = pd.read_csv('August23_32.csv')
 df = df[df['year'] >= 2015]
 df = df.reset_index(drop = True)
 df = df.drop(df[df['release_date'] == 'Release: 01/01/1970'].index)
