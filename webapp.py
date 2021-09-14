@@ -273,49 +273,45 @@ sixth_2,
 
 
 
-# /*
-# #UMAP
-# @app.callback(
-#     Output('umAp-2d','figure'),
-#     Input('radios','value'),
-#     #prevent_initial_call=True
-# )
 
+#UMAP
+@app.callback(
+    Output('umAp-2d','figure'),
+    Input('radios','value'),
+    #prevent_initial_call=True
+)
 
-
-# #@app.callback
-# #(
-# #   Output('comp-plot-1','figure'),
-# #   Input('radios','value') 
-# #)
-# def update_umap(value):
-#     #print(type(value))
-#     if value == 'umap_2d_df':
-#         umap_fig_2d = px.scatter(umap_2d_df, x='0', y='1',
-#         #title='2d_UMAP 100D -> 2D',
-#         width=800,                  # figure width in pixels
-#         height=800,
-#         color=umap_2d_df['cl_label'],
-#         color_discrete_sequence=px.colors.qualitative.Plotly,
-#         #color_continuous_scale=px.colors.sequential.Viridis
-#         template='plotly_white',
-#         opacity = 0.7)
+#@app.callback
+#(
+#   Output('comp-plot-1','figure'),
+#   Input('radios','value') 
+#)
+def update_umap(value):
+    #print(type(value))
+    if value == 'umap_2d_df':
+        umap_fig_2d = px.scatter(umap_2d_df, x='0', y='1',
+        #title='2d_UMAP 100D -> 2D',
+        width=800,                  # figure width in pixels
+        height=800,
+        color=umap_2d_df['cl_label'],
+        color_discrete_sequence=px.colors.qualitative.Plotly,
+        #color_continuous_scale=px.colors.sequential.Viridis
+        template='plotly_white',
+        opacity = 0.7)
         
-#         umap_fig_2d.update_traces(marker_size=1.8)
-#         return umap_fig_2d
+        umap_fig_2d.update_traces(marker_size=1.8)
+        return umap_fig_2d
     
-#     elif value == 'umap_3d_df':
-#         umap_fig_3d = px.scatter_3d(umap_3d_df, x='0', y='1', z='2',
-#         color=umap_3d_df['cl_label'], 
-#         #labels={'color': 'cluster_label'},
-#         width = 800, height = 800,
-#         color_discrete_sequence=px.colors.qualitative.Plotly, 
-#         template='plotly_white',)
-#         umap_fig_3d.update_traces(marker_size=1.7)
-#         return umap_fig_3d
+    elif value == 'umap_3d_df':
+        umap_fig_3d = px.scatter_3d(umap_3d_df, x='0', y='1', z='2',
+        color=umap_3d_df['cl_label'], 
+        #labels={'color': 'cluster_label'},
+        width = 800, height = 800,
+        color_discrete_sequence=px.colors.qualitative.Plotly, 
+        template='plotly_white',)
+        umap_fig_3d.update_traces(marker_size=1.7)
+        return umap_fig_3d
 
-      
-# */
 
 # /*
 
